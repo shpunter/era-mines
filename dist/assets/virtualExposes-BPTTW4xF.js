@@ -1,1 +1,0 @@
-import{t as e}from"./virtual_mf-exposes___mfe_internal__mines__remoteEntry_js-DllS3V11.js";export{e as default};
