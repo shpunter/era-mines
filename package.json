@@ -1,0 +1,28 @@
+{
+  "name": "mines-remote",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "serve": "npm run build && npm run preview"
+  },
+  "dependencies": {
+    "@biomejs/biome": "2.4.5",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "rxjs": "^7.8.2",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@module-federation/vite": "^1.4.1",
+    "@types/node": "^25.9.2",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^6.0.2",
+    "typescript": "^5.7.2",
+    "vite": "^8.0.0"
+  }
+}
