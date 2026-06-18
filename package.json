@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "serve": "npm run build && npm run preview"
+    "serve": "npm run build && npm run preview",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "@biomejs/biome": "2.4.5",
