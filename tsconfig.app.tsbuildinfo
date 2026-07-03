@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/features/mines/mines.tsx","./src/features/mines/mines.store.ts","./src/features/mines/mine/mine.tsx","./src/shared/minesbus.ts","./src/shared/useobservable.ts"],"version":"5.9.3"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/features/mines/mines.tsx","./src/features/mines/mines.store.ts","./src/features/mines/mine/mine.tsx","./src/shared/createidbstore.ts","./src/shared/minesbus.ts","./src/shared/useobservable.ts"],"version":"5.9.3"}
