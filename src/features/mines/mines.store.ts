@@ -1,4 +1,4 @@
-import { create } from "zustand";
+import { createIdbStore } from "#/shared/createIdbStore";
 import { patchUp } from "#/shared/minesBus";
 import type { Mine } from "#/shared/minesBus";
 
@@ -13,7 +13,7 @@ type Action = {
   reset: () => void;
 };
 
-export const useMinesStore = create<Store & Action>((set) => ({
+export const useMinesStore = createIdbStore<Store & Action>("mines", (set) => ({
   history: [],
   historyIDX: 0,
 
@@ -22,15 +22,19 @@ export const useMinesStore = create<Store & Action>((set) => ({
       const history = structuredClone(state.history);
       history[state.historyIDX] ??= [];
       history[state.historyIDX].push(mine);
-      patchUp({ history });
       return { history };
     });
   },
 
   setHistoryIDX: (historyIDX) => set({ historyIDX }),
 
-  reset: () => {
-    set({ history: [] });
-    patchUp({ history: [] });
-  },
+  reset: () => set({ history: [] }),
 }));
+
+useMinesStore.subscribe((state, prev) => {
+  if (state.history !== prev.history) patchUp({ history: state.history });
+});
+
+useMinesStore.persist.onFinishHydration((state) => {
+  patchUp({ history: state.history });
+});
