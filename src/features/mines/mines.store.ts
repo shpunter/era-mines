@@ -36,5 +36,5 @@ useMinesStore.subscribe((state, prev) => {
 });
 
 useMinesStore.persist.onFinishHydration((state) => {
-  patchUp({ history: state.history });
+  patchUp({ history: state.history, hydrated: true });
 });
