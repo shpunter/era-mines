@@ -12,7 +12,7 @@ const Mines = () => {
 
   return (
     <div className={css.mines}>
-      {(["gold", "ore", "wood", "crystals", "gem", "mercury"] as const).map(
+      {(["gold", "wood", "ore", "crystals", "gem", "mercury"] as const).map(
         (item) => {
           return <Mine key={item} type={item} onClick={onClick(item)} />;
         },
